@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS login_auth;
+USE login_auth;
+
+CREATE TABLE IF NOT EXISTS users (
+    id         INT AUTO_INCREMENT PRIMARY KEY,
+    email      VARCHAR(75)  NOT NULL UNIQUE,
+    password   VARCHAR(255) NOT NULL,
+    created_at DATETIME     DEFAULT CURRENT_TIMESTAMP
+);
+
+USE login_auth;
+
+CREATE TABLE IF NOT EXISTS tasks (
+    id         INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    done TINYINT(1) NOT NULL DEFAULT 0
+);
